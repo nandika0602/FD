@@ -1,11 +1,9 @@
 var client;
+
 init();
+
 async function init() {
   client = await app.initialized();
-  console.log(client,'client');
-  console.log(client.iparams.get(),'client');
-  const val = await client.iparams.get()
-  console.log(val, 'client','val');
   document.getElementById('button').addEventListener('click',click)
 }
 
