@@ -21,6 +21,7 @@ async function click () {
   try { 
       //iparams value
       const iparamsValue = await client.iparams.get();
+      console.log(iparamsValue,'iparamsValue');
       const {ownerName, repoName, token} = iparamsValue
 
       //ticket data
@@ -75,10 +76,18 @@ async function click () {
         })
         if (response.ok) {
             const resData = await response.json();
+            showNotification('success', `Issue #${resData.number} created successfully`);
             console.log("Issue created!!!", resData.number);
         } else {
             const err = await response.json();
+            showNotification('danger', `Error: ${err.message}`);
             console.error("Error:", err.message);
+        }
+        function showNotification (type, message) {
+          client.interface.trigger('showNotify', {
+            type,
+            message
+          });
         }
       } catch (error) {
       console.log(error);
