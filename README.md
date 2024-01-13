@@ -18,3 +18,15 @@ This app displays the name of the requester of a freshdesk ticket in the ticket_
     └── manifest.json             A JSON file holding meta data for app to run on platform
 
 Explore [more of app sample apps](https://community.developers.freshworks.com/t/freshworks-sample-apps/3604) on the Freshworks github respository.
+
+## Overview
+
+This project incorporates GitHub API integration to facilitate the addition of issues and the management of labels. Through the API, users can create issues and dynamically apply labels to indicate whether the ticket is in an open or closed state.
+
+## Features
+
+- **GitHub API Integration:** Leverage the GitHub API to add issues and manage labels.
+- **Freshdesk API Integration:** Retrieve issues from the Freshdesk API to populate the GitHub issues list.
+- **Issue Creation:** Users can create new GitHub issues, and the details are synchronized with Freshdesk for comprehensive issue tracking.
+- **Labeling System:** Automatically apply labels to GitHub issues based on their Freshdesk status (open or closed).
+
